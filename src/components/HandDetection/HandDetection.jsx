@@ -15,7 +15,9 @@ const HandDetection = () => {
 	const { state, dispatch } = useContext(HandDrawingContext);
 
 	useEffect(() => {
-		if (!predictions || !predictions.length) return;
+		console.log(predictions);
+		if (!predictions || !predictions.length)
+			return dispatch(setCurrentPoints(null, null));
 
 		const {
 			bbox: [x, y, width, height]
@@ -28,7 +30,7 @@ const HandDetection = () => {
 
 	return (
 		<div className={style.container}>
-			<h1>hand drawing</h1>
+			{isReady ? <h1>hand drawing</h1> : <h1>Loading ...</h1>}
 			<pre>{JSON.stringify(state, null, 4)}</pre>
 			<div className={style.videoBox}>
 				<video
