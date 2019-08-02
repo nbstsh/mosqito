@@ -5,4 +5,9 @@
   top: 0;
   left: 0;
   z-index: 100;
+  transform: scale(1.5);
+}
+
+.pointer {
+  transition: all 0.2s;
 }

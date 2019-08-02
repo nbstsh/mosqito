@@ -12,6 +12,8 @@
 }
 
 .video {
+  transform-origin: center;
+  transform: rotateY(180deg);
   visibility: hidden;
   object-fit: cover;
 }

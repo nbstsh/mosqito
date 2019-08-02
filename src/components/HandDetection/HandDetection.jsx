@@ -7,15 +7,12 @@ import { HandDrawingContext } from '../../contexts/HandDrawingContext/HandDrawin
 import { setCurrentPoints } from '../../contexts/HandDrawingContext/HandDrawing.actions';
 
 const HandDetection = () => {
-	const {
-		videoRef,
-		isReady,
-		predictions
-	} = useHandDetectionWithPredictinos();
+	const { videoRef, isReady, predictions } = useHandDetectionWithPredictinos(
+		100
+	);
 	const { state, dispatch } = useContext(HandDrawingContext);
 
 	useEffect(() => {
-		console.log(predictions);
 		if (!predictions || !predictions.length)
 			return dispatch(setCurrentPoints(null, null));
 
@@ -36,10 +33,8 @@ const HandDetection = () => {
 				<video
 					className={style.video}
 					ref={videoRef}
-					style={{
-						width: window.innerWidth,
-						height: window.innerHeight
-					}}
+					width={window.innerWidth}
+					height={window.innerHeight}
 				/>
 			</div>
 		</div>

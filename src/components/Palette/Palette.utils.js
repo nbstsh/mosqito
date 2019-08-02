@@ -7,7 +7,7 @@ const LINE_OPTION = {
 	y: 0,
 	points: [],
 	stroke: randomColor,
-	tension: 0
+	tension: 0.5
 };
 
 const isValidPoints = (x, y) => {
