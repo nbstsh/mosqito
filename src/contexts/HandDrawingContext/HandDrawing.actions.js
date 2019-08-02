@@ -13,3 +13,12 @@ export const startDrawing = drawingLine => ({
 export const finishDrawing = () => ({
 	type: actionTypes.FINISH_DRAWING
 });
+
+export const countUp = () => ({
+	type: actionTypes.COUNT
+});
+
+export const setCurrentPointerPoints = (x, y) => ({
+	type: actionTypes.SET_CURRENT_POINTER_POINTS,
+	payload: { x, y }
+});

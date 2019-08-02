@@ -27,8 +27,8 @@ const HandDetection = () => {
 
 	return (
 		<div className={style.container}>
-			{isReady ? <h1>hand drawing</h1> : <h1>Loading ...</h1>}
-			<pre>{JSON.stringify(state, null, 4)}</pre>
+			{!isReady && <h1>Loading ...</h1>}
+			{/* <pre>{JSON.stringify(state, null, 4)}</pre> */}
 			<div className={style.videoBox}>
 				<video
 					className={style.video}

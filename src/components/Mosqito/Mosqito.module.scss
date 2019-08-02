@@ -1,0 +1,15 @@
+.mosqito {
+  fill: black;
+  position: absolute;
+}
+
+.wing {
+  transform-origin: bottom left;
+  animation: shake 0.03s linear infinite alternate;
+}
+
+@keyframes shake {
+  to {
+    transform: rotate(8deg);
+  }
+}

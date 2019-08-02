@@ -1,7 +1,9 @@
 export const actionTypes = {
 	SET_CURRENT_POINTS: 'SET_CURRENT_POINTS',
 	START_DRAWING: 'START_DRAWING',
-	FINISH_DRAWING: 'FINISH_DRAWING'
+	FINISH_DRAWING: 'FINISH_DRAWING',
+	COUNT: 'COUNT',
+	SET_CURRENT_POINTER_POINTS: 'SET_CURRENT_POINTER_POINTS'
 };
 
 export const reducer = (state, action) => {
@@ -11,7 +13,20 @@ export const reducer = (state, action) => {
 		case actionTypes.START_DRAWING:
 			return { ...state, isDrawing: true, drawingLine: action.payload };
 		case actionTypes.FINISH_DRAWING:
-			return { ...state, isDrawing: false, drawingLine: null };
+			return {
+				...state,
+				isDrawing: false,
+				drawingLine: null,
+				currentPointerPoints: { x: null, y: null },
+				count: 0
+			};
+		case actionTypes.COUNT:
+			return {
+				...state,
+				count: state.count < 10 ? state.count + 1 : 0
+			};
+		case actionTypes.SET_CURRENT_POINTER_POINTS:
+			return { ...state, currentPointerPoints: action.payload, count: 0 };
 		default:
 			throw new Error('Invalid action provided.');
 	}
@@ -19,6 +34,8 @@ export const reducer = (state, action) => {
 
 export const initialState = {
 	currentPoints: { x: null, y: null },
+	currentPointerPoints: { x: null, y: null },
 	isDrawing: false,
-	drawingLine: null
+	drawingLine: null,
+	count: 0
 };
