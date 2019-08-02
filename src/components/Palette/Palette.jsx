@@ -2,14 +2,13 @@ import React, { useContext, useRef, useEffect } from 'react';
 
 import style from './Palette.module.scss';
 
-import { Stage, Layer } from 'react-konva';
+import { Stage, Layer, Rect, Circle } from 'react-konva';
 import { HandDrawingContext } from '../../contexts/HandDrawingContext/HandDrawing.context';
 import { initLine, addPoints } from './Palette.utils';
 import {
 	startDrawing,
 	finishDrawing
 } from '../../contexts/HandDrawingContext/HandDrawing.actions';
-import Konva from 'konva';
 
 const Palette = () => {
 	const {
@@ -23,17 +22,16 @@ const Palette = () => {
 		if (isDrawing || !x || !y) return;
 
 		//init line
-		console.log(currentPoints);
 		const line = initLine(currentPoints.x, currentPoints.y);
 		dispatch(startDrawing(line));
-
 		// add line to layer
 		layerRef.current.add(line);
 	}, [isDrawing, currentPoints, dispatch]);
 
 	useEffect(() => {
 		if (!isDrawing || !drawingLine) return;
-		// detect whether or not line is drawing
+
+		// detect whether or not user keeps drawing
 		if (x && y) {
 			addPoints(drawingLine, x, y);
 		} else {
@@ -41,28 +39,22 @@ const Palette = () => {
 		}
 	}, [isDrawing, drawingLine, currentPoints, dispatch]);
 
-	useEffect(() => {
-		// var circle = new Konva.Circle({
-		// 	x: window.innerWidth / 2,
-		// 	y: window.innerHeight / 2,
-		// 	radius: 70,
-		// 	fill: 'red',
-		// 	stroke: 'black',
-		// 	strokeWidth: 4
-		// });
-		// // add the shape to the layer
-		// layerRef.current.add(circle);
-	}, []);
-
 	return (
 		<Stage
 			className={style.stage}
 			width={window.innerWidth}
 			height={window.innerHeight}
 		>
-			<Layer ref={layerRef} />
+			<Layer ref={layerRef}>
+				<Pointer x={x} y={y} />
+			</Layer>
 		</Stage>
 	);
+};
+
+const Pointer = ({ x, y }) => {
+	if (!x || !y) return null;
+	return <Circle x={x} y={y} radius={10} fill='green' />;
 };
 
 export default Palette;
