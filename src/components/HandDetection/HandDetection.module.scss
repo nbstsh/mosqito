@@ -1,7 +1,9 @@
+$sky-image-url: "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+
 .container {
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url($sky-image-url);
 }
 
 .videoBox {

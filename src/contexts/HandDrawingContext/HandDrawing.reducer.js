@@ -1,10 +1,4 @@
-export const actionTypes = {
-	SET_CURRENT_POINTS: 'SET_CURRENT_POINTS',
-	START_DRAWING: 'START_DRAWING',
-	FINISH_DRAWING: 'FINISH_DRAWING',
-	COUNT: 'COUNT',
-	SET_CURRENT_POINTER_POINTS: 'SET_CURRENT_POINTER_POINTS'
-};
+import { actionTypes } from './HandDrawing.actions';
 
 export const reducer = (state, action) => {
 	switch (action.type) {

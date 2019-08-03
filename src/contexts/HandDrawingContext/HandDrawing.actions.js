@@ -1,4 +1,10 @@
-import { actionTypes } from './HandDrawing.reducer';
+export const actionTypes = {
+	SET_CURRENT_POINTS: 'SET_CURRENT_POINTS',
+	START_DRAWING: 'START_DRAWING',
+	FINISH_DRAWING: 'FINISH_DRAWING',
+	COUNT: 'COUNT',
+	SET_CURRENT_POINTER_POINTS: 'SET_CURRENT_POINTER_POINTS'
+};
 
 export const setCurrentPoints = (x, y) => ({
 	type: actionTypes.SET_CURRENT_POINTS,
