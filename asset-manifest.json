@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mosqito/static/css/main.b49c6124.chunk.css",
+    "main.js": "/mosqito/static/js/main.b695efff.chunk.js",
+    "main.js.map": "/mosqito/static/js/main.b695efff.chunk.js.map",
+    "runtime~main.js": "/mosqito/static/js/runtime~main.ed416469.js",
+    "runtime~main.js.map": "/mosqito/static/js/runtime~main.ed416469.js.map",
+    "static/js/2.82c23dab.chunk.js": "/mosqito/static/js/2.82c23dab.chunk.js",
+    "static/js/2.82c23dab.chunk.js.map": "/mosqito/static/js/2.82c23dab.chunk.js.map",
+    "index.html": "/mosqito/index.html",
+    "precache-manifest.85b249386b249242606bcd47d2e30b53.js": "/mosqito/precache-manifest.85b249386b249242606bcd47d2e30b53.js",
+    "service-worker.js": "/mosqito/service-worker.js",
+    "static/css/main.b49c6124.chunk.css.map": "/mosqito/static/css/main.b49c6124.chunk.css.map"
+  }
+}
