@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mosqito/precache-manifest.85b249386b249242606bcd47d2e30b53.js"
+  "/mosqito/precache-manifest.a42167b345e6e6942a5f1de3d6ca2915.js"
 );
 
 self.addEventListener('message', (event) => {

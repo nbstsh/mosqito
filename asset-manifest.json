@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/mosqito/static/css/main.b49c6124.chunk.css",
-    "main.js": "/mosqito/static/js/main.b695efff.chunk.js",
-    "main.js.map": "/mosqito/static/js/main.b695efff.chunk.js.map",
+    "main.css": "/mosqito/static/css/main.3b9e420e.chunk.css",
+    "main.js": "/mosqito/static/js/main.5a1983aa.chunk.js",
+    "main.js.map": "/mosqito/static/js/main.5a1983aa.chunk.js.map",
     "runtime~main.js": "/mosqito/static/js/runtime~main.ed416469.js",
     "runtime~main.js.map": "/mosqito/static/js/runtime~main.ed416469.js.map",
-    "static/js/2.82c23dab.chunk.js": "/mosqito/static/js/2.82c23dab.chunk.js",
-    "static/js/2.82c23dab.chunk.js.map": "/mosqito/static/js/2.82c23dab.chunk.js.map",
+    "static/js/2.a0147121.chunk.js": "/mosqito/static/js/2.a0147121.chunk.js",
+    "static/js/2.a0147121.chunk.js.map": "/mosqito/static/js/2.a0147121.chunk.js.map",
     "index.html": "/mosqito/index.html",
-    "precache-manifest.85b249386b249242606bcd47d2e30b53.js": "/mosqito/precache-manifest.85b249386b249242606bcd47d2e30b53.js",
+    "precache-manifest.a42167b345e6e6942a5f1de3d6ca2915.js": "/mosqito/precache-manifest.a42167b345e6e6942a5f1de3d6ca2915.js",
     "service-worker.js": "/mosqito/service-worker.js",
-    "static/css/main.b49c6124.chunk.css.map": "/mosqito/static/css/main.b49c6124.chunk.css.map"
+    "static/css/main.3b9e420e.chunk.css.map": "/mosqito/static/css/main.3b9e420e.chunk.css.map",
+    "static/media/hand.b109484d.svg": "/mosqito/static/media/hand.b109484d.svg"
   }
 }
