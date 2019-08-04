@@ -25,6 +25,19 @@ $sky-image-url: "https://images.pexels.com/photos/912110/pexels-photo-912110.jpe
   }
 }
 
+.errorBox {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: red;
+  }
+}
+
 .handBox {
   position: fixed;
   top: 0;

@@ -31,12 +31,12 @@ const Palette = () => {
 	useEffect(() => {
 		if (isDrawing || !x || !y) return;
 
-		const line = initLine(currentPoints.x, currentPoints.y);
+		const line = initLine(x, y);
 		dispatch(startDrawing(line));
 
 		// add line to layer
 		layerRef.current.add(line);
-	}, [isDrawing, currentPoints, dispatch]);
+	}, [isDrawing, x, y, dispatch]);
 
 	useEffect(() => {
 		if (!isDrawing || !drawingLine) return;
@@ -48,13 +48,14 @@ const Palette = () => {
 		} else {
 			dispatch(countUp());
 		}
-	}, [isDrawing, drawingLine, currentPoints, dispatch]);
+	}, [isDrawing, drawingLine, currentPoints, x, y, dispatch]);
 
 	useEffect(() => {
 		if (count < 10) return;
 
 		dispatch(finishDrawing());
-	}, [count]);
+	}, [count, dispatch]);
+
 	return (
 		<Stage
 			className={style.stage}

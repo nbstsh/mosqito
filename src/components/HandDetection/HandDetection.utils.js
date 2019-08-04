@@ -29,25 +29,25 @@ const loadModel = async () => {
 };
 
 const initHandDetection = async videoEl => {
-	try {
-		await startVideo(videoEl);
-		return await loadModel();
-	} catch (e) {
-		handTrack.stopVideo(videoEl);
-		console.error(e);
-	}
+	await startVideo(videoEl);
+	return await loadModel();
 };
 
 export const useHandDetectionWithPredictinos = (interval = 500) => {
 	const videoRef = useRef(null);
 	const [model, setModel] = useState(null);
 	const [isReady, setIsReady] = useState(false);
+	const [isError, setIsError] = useState(false);
 	const [predictions, setPredictions] = useState(null);
 
 	useEffect(() => {
 		initHandDetection(videoRef.current)
 			.then(setModel)
-			.catch(err => console.error('Something went wrong at init.'));
+			.catch(err => {
+				setIsError(true);
+				handTrack.stopVideo(videoRef.current);
+				console.error(err);
+			});
 	}, []);
 
 	useEffect(() => {
@@ -64,6 +64,7 @@ export const useHandDetectionWithPredictinos = (interval = 500) => {
 	return {
 		videoRef,
 		isReady,
+		isError,
 		predictions
 	};
 };

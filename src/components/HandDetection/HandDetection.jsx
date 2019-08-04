@@ -9,9 +9,12 @@ import { setCurrentPoints } from '../../contexts/HandDrawingContext/HandDrawing.
 import { ReactComponent as HandLogo } from './hand.svg';
 
 const HandDetection = () => {
-	const { videoRef, isReady, predictions } = useHandDetectionWithPredictinos(
-		100
-	);
+	const {
+		videoRef,
+		isReady,
+		isError,
+		predictions
+	} = useHandDetectionWithPredictinos(100);
 	const { dispatch } = useContext(HandDrawingContext);
 
 	useEffect(() => {
@@ -27,7 +30,11 @@ const HandDetection = () => {
 		dispatch(setCurrentPoints(currentPointX, currentPointY));
 	}, [predictions, dispatch]);
 
-	return (
+	return isError ? (
+		<div className={style.errorBox}>
+			<h1>Something went wrong ....</h1>
+		</div>
+	) : (
 		<div className={style.container}>
 			{isReady ? (
 				<h1>Show your hand!</h1>
