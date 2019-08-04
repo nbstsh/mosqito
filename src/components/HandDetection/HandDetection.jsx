@@ -6,11 +6,13 @@ import { useHandDetectionWithPredictinos } from './HandDetection.utils';
 import { HandDrawingContext } from '../../contexts/HandDrawingContext/HandDrawing.context';
 import { setCurrentPoints } from '../../contexts/HandDrawingContext/HandDrawing.actions';
 
+import { ReactComponent as HandLogo } from './hand.svg';
+
 const HandDetection = () => {
 	const { videoRef, isReady, predictions } = useHandDetectionWithPredictinos(
 		100
 	);
-	const { state, dispatch } = useContext(HandDrawingContext);
+	const { dispatch } = useContext(HandDrawingContext);
 
 	useEffect(() => {
 		if (!predictions || !predictions.length)
@@ -27,8 +29,22 @@ const HandDetection = () => {
 
 	return (
 		<div className={style.container}>
-			{!isReady && <h1>Loading ...</h1>}
-			{/* <pre>{JSON.stringify(state, null, 4)}</pre> */}
+			{isReady ? (
+				<h1>Show your hand!</h1>
+			) : (
+				<h1>
+					Loading
+					<span> . </span>
+					<span> . </span>
+					<span> . </span>
+				</h1>
+			)}
+
+			<div className={style.handBox}>
+				{predictions && predictions.length > 0 && (
+					<HandLogo style={{ width: '5vw' }} />
+				)}
+			</div>
 			<div className={style.videoBox}>
 				<video
 					className={style.video}
